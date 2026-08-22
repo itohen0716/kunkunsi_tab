@@ -1,0 +1,43 @@
+.lyrics{resize:none!important}
+.palette h2{margin:10px 0 8px}.palette h2:first-child{margin-top:0}.palette button.active{background:#87683f;color:#fff}.modeButtons,.lyricSymbols{display:grid;grid-template-columns:1fr 1fr;gap:6px}.modeButtons button,.lyricSymbols button{min-height:38px;padding:.3rem;font-size:.72rem}.scoreCol{grid-template-columns:42px 42px}.beat{position:relative;border-bottom:1px solid #b8ad9c}.noteCell{width:100%;height:100%;border-bottom:0;position:relative;overflow:visible}.noteCell i,.halfCell i{position:absolute;font-size:.72rem;font-style:normal;line-height:1;z-index:4;pointer-events:none}.noteCell i{right:-6px;top:1px}.halfCell i{right:-8px;top:-7px;font-size:.66rem}.noteCell.kubanchi span,.halfCell.kubanchi span{font-size:.72em}.halfCell{position:absolute;z-index:2;left:7px;bottom:-11px;width:27px;height:21px;min-height:0;padding:0;border:0;border-radius:5px;background:#fffdf5;color:#a1937f;font-size:.55rem;font-family:"Yu Mincho",serif;overflow:visible}.halfCell span{font-size:1rem;color:var(--ink)}.halfCell.playing{background:#ffd66c}.lyricLane{position:relative;width:42px;height:480px}.lyricMarks{position:absolute;right:0;top:0;width:20px;display:grid;grid-template-rows:repeat(12,40px)}.lyricMark{min-height:0;border:0;border-radius:0;padding:0;background:transparent;font-family:serif;font-size:.72rem}.lyricMark:hover{background:#fff3cf}
+@media print{
+  @page{size:A4 landscape;margin:2mm}
+  html,body,main,.workspace,.paperWrap{width:100%;height:auto;margin:0;padding:0}
+  .paper{width:100%;max-width:none;height:auto!important;min-height:0!important;padding:0}
+  .paperBody{gap:5mm;align-items:flex-start}
+  .score{gap:7px}
+  .scoreCol{min-height:0;box-shadow:none!important;border:0.35mm solid #222!important;background:#fff!important;grid-template-columns:44px 44px!important}
+  .noteCells{grid-template-rows:repeat(12,13mm)}
+  .beat{min-height:13mm;border-bottom:0.25mm solid #222!important}
+  .lyricLane,.lyrics,.lyricsPrint{height:156mm}
+  .lyricMarks{grid-template-rows:repeat(12,13mm)}
+  .noteCell{font-size:1.45rem}
+  .halfCell span{font-size:1.05rem}
+  .noteCells{border-right:0.25mm solid #222!important}
+  .scoreCol.noLyrics .lyricLane{display:block!important}
+  .lyrics::placeholder{color:transparent!important;opacity:0!important}
+  .scoreCol.selected{box-shadow:none!important}
+  .halfCell:not(:has(span)){color:transparent!important;background:transparent!important}
+  .halfCell:has(span){border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+  .beat:has(.halfCell span){border-bottom-color:transparent!important}
+  .halfCell:has(span)::before,.halfCell:has(span)::after{border-top:0.25mm solid #222!important}
+  .halfCell:has(span) span{background:transparent!important}
+  .beat.trailingEmpty,.lyricMark.trailingEmpty{display:block!important}
+  .lyrics{display:none!important}
+  .lyricsPrint{display:block!important;writing-mode:vertical-rl;width:42px;padding:7px 2px;line-height:1.3;white-space:pre-wrap;overflow:hidden}
+  .scoreStage{display:none!important}
+  .printPages{display:block!important}
+  .printSheet{box-sizing:border-box;width:293mm;height:206mm;display:flex;align-items:center;justify-content:center;break-after:page;page-break-after:always;overflow:hidden}
+  .printSheet .printPaper{position:static;display:flex!important;flex-direction:column;justify-content:center;width:100%!important;height:100%!important;min-height:0!important;padding-right:4mm!important;padding-left:4mm!important;transform:none!important;overflow:visible}
+  .printSheet .paperBody{flex:0 0 auto;height:auto!important;min-height:0!important;justify-content:center}
+  .printSheet.partial .paperBody{justify-content:flex-start}
+  .printSheet .notationLegend{position:static!important;flex:0 0 auto;width:100%;break-inside:avoid;page-break-inside:avoid}
+  .printSheet:last-child{break-after:auto;page-break-after:auto}
+  .printPaper{break-inside:avoid;page-break-inside:avoid}
+  .printPaper .score{gap:7px}
+  .printPaper .chiriLine{top:calc((var(--chiri-start) + .5) * 13mm);height:calc((var(--chiri-length) - 1) * 13mm);right:1mm;border-right:0.45mm solid #222}
+  .scoreCol.printTrailingHalf{border-bottom-color:transparent!important}
+  .scoreCol.printTrailingHalf::after{content:"";position:absolute;right:0;bottom:-0.35mm;left:0;z-index:1;height:0.35mm;background:linear-gradient(to right,#222 0 14px,transparent 14px 30px,#222 30px 100%);pointer-events:none}
+  .notationLegend{margin-top:3mm;padding-top:1.5mm;border-top:0.25mm solid #222;font-size:7pt;line-height:1.35}
+  .notationLegend p{margin:0.5mm 0;grid-template-columns:11mm 1fr;gap:2mm}
+}

@@ -1,0 +1,22 @@
+.rhythmSettings{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:14px;align-items:center;margin-top:12px}
+.rhythmSettings>div,.rhythmSettings label{display:grid;gap:6px;font-size:.8rem}
+.rhythmSettings p{margin:0;font-size:.82rem;color:#6f6252}
+.swingButtons{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+.swingButtons button{min-height:40px;padding:.35rem}
+.swingButtons button.active{background:#87683f;color:#fff}
+.workspace{grid-template-columns:320px minmax(0,1fr)}
+.kandoImage{display:block;width:100%;height:auto;max-height:none;object-fit:contain;margin:3px auto 8px;background:#fffdf7;border:1px solid #d5c7b2;border-radius:10px;image-rendering:auto}
+.inputPosition{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.inputPosition button{min-height:40px}
+.inputStatus{margin:6px 0!important;padding:6px;border-radius:7px;background:#fff8e9;color:#6c5435!important;text-align:center;font-weight:700}
+.screenKeypad{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
+.screenKeypad button{display:grid;place-items:center;gap:1px;min-height:50px;padding:3px;border-radius:7px}
+.screenKeypad b{font-family:"Yu Mincho",serif;font-size:1.1rem}
+.screenKeypad small{font-size:.82rem;font-weight:700;color:#40566c;line-height:1.15;white-space:nowrap}
+.palette button.active small{color:#fff}
+.markLengthControl{display:grid;gap:4px;margin-top:7px;font-size:.75rem;font-weight:700}
+.lyricMark{position:relative;overflow:visible!important;z-index:1}
+.lyricMark:has(.bracketSvg){z-index:3}
+.bracketSvg{position:absolute;left:0;top:0;width:20px;overflow:visible;pointer-events:none}
+@media(max-width:720px){.rhythmSettings{grid-template-columns:1fr}.workspace{display:block}.screenKeypad button{min-height:56px}.kandoImage{max-height:360px}}
+@media print{.rhythmSettings,.inputPosition,.inputStatus,.kandoImage,.screenKeypad{display:none!important}}

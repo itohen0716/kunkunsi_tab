@@ -1,0 +1,503 @@
+.workspace {
+  grid-template-columns: 500px minmax(0, 1fr);
+}
+
+.rhythmHelpIntro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 44px;
+  align-items: center;
+  gap: 10px;
+}
+
+.rhythmHelpIntro p {
+  margin: 0;
+  color: #51483d;
+  line-height: 1.55;
+  font-size: .88rem;
+}
+
+.rhythmSettings {
+  grid-template-columns: 1.15fr 1fr 1.45fr;
+  gap: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.tempoMeta {
+  font-size: .72rem;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.tempoSetting {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+.tempoSetting > input {
+  width: 100%;
+}
+
+.tempoHeading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .8rem;
+}
+
+.miniHelpButton {
+  width: 25px;
+  min-height: 25px;
+  padding: 0;
+  border: 1.5px solid #302a22;
+  border-radius: 50%;
+  font-size: .85rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.helpButton {
+  flex: 0 0 auto;
+  width: 42px;
+  min-height: 42px;
+  padding: 0;
+  border: 2px solid #302a22;
+  border-radius: 50%;
+  background: #fffdf9;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.swingHelpDialog {
+  width: min(720px, calc(100vw - 24px));
+  max-height: min(82vh, 760px);
+  padding: 0;
+  border: 1px solid #b8aa94;
+  border-radius: 14px;
+  background: #fffdf7;
+  color: #302a22;
+  box-shadow: 0 16px 45px #302a2255;
+}
+
+.swingHelpDialog::backdrop {
+  background: #302a2266;
+}
+
+.dialogHeader {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #ddd0bd;
+  background: #fff8e9;
+}
+
+.dialogHeader h2 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.dialogHeader button {
+  width: 42px;
+  min-height: 42px;
+  padding: 0;
+  font-size: 1.4rem;
+}
+
+.dialogBody {
+  padding: 4px 18px 20px;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.dialogBody section {
+  padding-top: 4px;
+  border-top: 1px solid #e5dccd;
+}
+
+.dialogBody h3 {
+  margin: 16px 0 6px;
+  font-size: 1.05rem;
+}
+
+.dialogBody ul {
+  padding-left: 1.5rem;
+}
+
+.tempoHelpTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 14px;
+  font-size: .92rem;
+}
+
+.tempoHelpTable th,
+.tempoHelpTable td {
+  padding: 8px 10px;
+  border: 1px solid #cfc2ad;
+  text-align: left;
+  vertical-align: top;
+}
+
+.tempoHelpTable th {
+  background: #f3ead9;
+  white-space: nowrap;
+}
+
+.lyricsPrint {
+  display: none;
+}
+
+.palette {
+  display: grid;
+  grid-template-columns: minmax(170px, .82fr) minmax(240px, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.paletteLeft,
+.paletteRight {
+  min-width: 0;
+}
+
+.notationTools {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 20px;
+  min-width: 0;
+}
+
+.notationTools section {
+  min-width: 0;
+}
+
+.chiriControls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.chiriControls button {
+  min-height: 38px;
+  padding: .3rem;
+  font-size: .72rem;
+}
+
+.chiriControls label {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 4px 8px;
+  font-size: .72rem;
+}
+
+.chiriControls input {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.bracketChoice {
+  min-height: 58px !important;
+  padding: 2px !important;
+}
+
+.lyricSymbols {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.lyricSymbols > button:nth-child(1),
+.lyricSymbols > button:nth-child(2),
+.lyricSymbols > button:last-child {
+  grid-column: span 2;
+}
+
+.scoreStage > .player {
+  width: min(390px, 100%);
+  margin: 14px auto 0;
+  padding: 12px;
+}
+
+.bracketChoice svg {
+  display: block;
+  width: 36px;
+  height: 44px;
+  margin: auto;
+}
+
+.bracketChoice line,
+.bracketChoice circle {
+  stroke: currentColor;
+  stroke-width: 1.4;
+}
+
+.bracketChoice line {
+  stroke-linecap: square;
+}
+
+.bracketChoice circle {
+  fill: #fff;
+}
+
+.bracketChoice circle.filled {
+  fill: currentColor;
+}
+
+.bracketChoice.active circle:not(.filled) {
+  fill: #87683f;
+}
+
+.halfCell.current {
+  outline: 3px solid #e7bd5c;
+  outline-offset: 1px;
+}
+
+/* 奏法記号は、それぞれの勘所文字の右上に収める。 */
+.noteCell i {
+  right: 1px;
+  top: 1px;
+}
+
+.halfCell i {
+  right: -5px;
+  top: -5px;
+  font-size: .62rem;
+}
+
+.halfCell {
+  background: transparent;
+  border-radius: 0;
+}
+
+.halfCell:has(span) {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.beat:has(.halfCell span) {
+  border-bottom-color: transparent;
+}
+
+.halfCell:has(span)::before,
+.halfCell:has(span)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  border-top: 1px solid #b8ad9c;
+}
+
+.halfCell:has(span)::before {
+  left: -7px;
+  width: 11px;
+}
+
+.halfCell:has(span)::after {
+  right: -8px;
+  width: 12px;
+}
+
+.halfCell:has(span) span {
+  position: relative;
+  z-index: 3;
+  background: transparent;
+}
+
+.noteCell .longSymbol,
+.halfCell .longSymbol {
+  display: inline-block;
+  white-space: nowrap;
+  writing-mode: horizontal-tb;
+  line-height: 1;
+}
+
+.noteCell,
+.halfCell {
+  font-family: "Kunkunshi Shippori", serif;
+  font-weight: 600;
+}
+
+.noteCell .longSymbol {
+  font-size: .78em;
+}
+
+.halfCell .longSymbol {
+  font-size: .72rem;
+}
+
+.kandoInstruction {
+  line-height: 1.55;
+}
+
+.kandoRest {
+  width: 100%;
+  margin-top: 6px;
+  font-family: "Yu Mincho", serif;
+  font-size: 1rem;
+}
+
+.paper {
+  display: block;
+}
+
+.scoreStage {
+  min-width: 0;
+}
+
+.paperBody {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.notationLegend {
+  margin-top: 16px;
+  padding-top: 8px;
+  border-top: 1px solid #817767;
+  font-size: .72rem;
+  line-height: 1.5;
+}
+
+.notationLegend p {
+  display: grid;
+  grid-template-columns: 4.5em minmax(0, 1fr);
+  gap: 8px;
+  margin: 2px 0;
+}
+
+.notationLegend b {
+  white-space: nowrap;
+}
+
+.noteCells {
+  position: relative;
+}
+
+.chiriLine {
+  position: absolute;
+  z-index: 5;
+  top: calc((var(--chiri-start) + .5) * 40px);
+  right: 3px;
+  height: calc((var(--chiri-length) - 1) * 40px);
+  border-right: 2px solid #222;
+  pointer-events: none;
+}
+
+.printPages {
+  display: none;
+}
+
+@media screen {
+  .scoreCol.screenTrailingHalf {
+    border-bottom-color: transparent;
+  }
+
+  .scoreCol.screenTrailingHalf::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    z-index: 1;
+    height: 1px;
+    background: linear-gradient(to right, #817767 0 13px, transparent 13px 29px, #817767 29px 100%);
+    pointer-events: none;
+  }
+
+  .paperWrap {
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scrollbar-gutter: stable;
+  }
+
+  .paper {
+    width: max-content;
+    min-height: 0;
+  }
+
+  .score,
+  .scoreCol {
+    flex: 0 0 auto;
+  }
+
+  .scoreCol {
+    min-height: 0;
+  }
+
+  .noteCells,
+  .lyricMarks {
+    grid-template-rows: repeat(var(--visibleRows, 12), 40px);
+  }
+
+  .lyricLane,
+  .lyrics {
+    height: calc(var(--visibleRows, 12) * 40px);
+  }
+
+  .beat.trailingEmpty,
+  .lyricMark.trailingEmpty {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .rhythmSettings {
+    grid-template-columns: 1fr;
+  }
+
+  .palette {
+    grid-template-columns: 125px minmax(0, 1fr);
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .palette h2 {
+    font-size: .82rem;
+  }
+
+  .paletteLeft .modeButtons,
+  .paletteLeft .lyricSymbols {
+    grid-template-columns: 1fr;
+  }
+
+  .paletteLeft .lyricSymbols > button {
+    grid-column: auto;
+  }
+
+  .notationTools {
+    grid-template-columns: .9fr 1.1fr;
+    gap: 8px;
+  }
+
+  .rhythmHelpIntro {
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .rhythmHelpIntro p {
+    font-size: .84rem;
+  }
+
+}
+
+@media print {
+  .swingHelpDialog {
+    display: none !important;
+  }
+}
+@font-face {
+  font-family: "Kunkunshi Shippori";
+  src: url("assets/fonts/ShipporiMincho-SemiBold-Kunkunshi.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
