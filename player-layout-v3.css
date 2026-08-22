@@ -1,23 +1,26 @@
-/* 旧工工四プレイヤーを基準にした読込み・練習専用レイアウト */
+/* 旧工工四プレイヤーの縦列配置を基準にした読込み・練習専用レイアウト */
+.builtinSongs{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:7px;padding-top:2px}
+.builtinSongBtn{min-height:36px;padding:5px 10px;border-radius:999px;font-size:.78rem}
+.builtinSongBtn.active{background:#80623d;color:#fff;border-color:#80623d}
+.kandoPanel{margin:0 0 12px;grid-template-columns:150px minmax(0,1fr);min-height:240px}
+.kandoVisual{width:min(100%,800px);max-width:800px;padding-right:76px}
+.kandoVisual #kandoImage{width:100%;max-width:720px;height:auto}
+.legacyCharacter{right:0;bottom:1px;width:78px;height:auto}
 .paperWrap{margin-bottom:12px}
-.playerPaper{min-height:0;padding:46px 28px 28px}
+.playerPaper{min-height:0;padding:48px 28px 28px}
 .paperBody{gap:18px}
 .score{gap:8px;align-items:flex-start}
-.scoreCol{position:relative;display:grid;grid-template-columns:46px 16px;min-height:386px;background:#fff;border:1px solid #817767}
-.columnNumber{position:absolute;top:-29px;left:50%;transform:translateX(-50%);min-width:28px;padding:2px 7px;border:1px solid #bbaa90;border-radius:7px;background:#fffaf0;color:#554936;font:700 .72rem/1.3 sans-serif;text-align:center}
+.scoreCol{position:relative;display:grid;grid-template-columns:54px 17px;min-height:386px;background:#fff;border:1px solid #817767}
+.columnNumber{position:absolute;top:-30px;left:27px;transform:translateX(-50%);min-width:30px;padding:2px 7px;border:1px solid #bbaa90;border-radius:7px;background:#fffaf0;color:#554936;font:700 .72rem/1.3 sans-serif;text-align:center}
 .noteCells{display:grid;grid-template-rows:repeat(12,32px);border-right:1px solid #bbae9c}
 .noteRow{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;justify-items:center;width:100%;height:32px;border-bottom:1px solid #d9cfbf;background:#fff}
-.noteRow>.noteGlyph{grid-column:1;font-size:1.15rem}
-.halfCell{position:static;grid-column:2;display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:transparent;font-size:.92rem;z-index:auto}
-.halfCell .noteGlyph{font-size:.92rem}
+.noteRow>.noteGlyph{grid-column:2;font-size:1.17rem}
+.halfCell{position:static;grid-column:1;grid-row:1;display:flex;align-items:center;justify-content:center;width:100%;height:100%;border-right:1px solid #ece4d7;background:transparent;font-size:.93rem;z-index:auto}
+.halfCell .noteGlyph{font-size:.93rem}
 .noteGlyph.small,.halfCell .noteGlyph.small{font-size:.78rem}
 .techMark{right:1px;top:0}
 .noteRow.playing,.halfCell.playing{background:#ffe39b;box-shadow:inset 0 0 0 2px #bd7e1f}
 .scoreCol:has(.playing){outline:3px solid #c28a2e;outline-offset:3px}
 .lyricLane{padding:5px 1px;font-size:.72rem;border-left:0}
-.kandoPanel{grid-template-columns:150px minmax(0,1fr);margin-top:0;margin-bottom:12px;min-height:250px}
-.kandoVisual{width:min(100%,760px);max-width:760px;padding-right:70px}
-.kandoVisual #kandoImage{width:100%;max-width:680px;height:auto}
-.legacyCharacter{right:0;bottom:3px;width:86px;height:auto}
-@media(max-width:800px){.playerPaper{min-width:650px}.kandoPanel{grid-template-columns:110px minmax(0,1fr)}.kandoVisual{padding-right:54px}.legacyCharacter{width:70px}}
-@media(max-width:520px){.playerPaper{min-width:610px;padding:44px 20px 24px}.kandoPanel{grid-template-columns:1fr}.kandoVisual{padding-right:48px}.legacyCharacter{width:62px}.score{gap:6px}.scoreCol{grid-template-columns:42px 14px}}
+@media(max-width:800px){.playerPaper{min-width:720px}.kandoPanel{grid-template-columns:110px minmax(0,1fr)}.kandoVisual{padding-right:60px}.legacyCharacter{width:66px}}
+@media(max-width:520px){.playerPaper{min-width:680px;padding:44px 20px 24px}.kandoPanel{grid-template-columns:1fr}.kandoVisual{padding-right:52px}.legacyCharacter{width:58px}.score{gap:6px}.scoreCol{grid-template-columns:50px 15px}}
