@@ -103,6 +103,39 @@
   .playerPaper{min-width:max-content;padding:40px 16px 20px}
 }
 
+/* v12: スマホ最終調整。1列レーン、4列譜面、手動・自動スクロールを両立。 */
+.halfCell,.halfCell.playing{background:transparent}
+.fullScoreViewport .playerPaper{justify-content:flex-start}
+.fullScoreViewport .paperBody{margin-inline:0}
+
+@media(max-width:520px){
+  .laneViewport{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;touch-action:pan-x}
+  .laneViewport::-webkit-scrollbar{display:none}
+  .laneColumn{flex-basis:100%}
+  .laneNote{width:25px;height:25px;font-size:.75rem}
+  .laneNote.half{width:18px;height:18px;font-size:.61rem}
+  .laneNote.playing{width:31px;height:31px}
+
+  .practiceStage,.kandoPanel{height:182px}
+  .kandoPanel{display:flex;align-items:center;justify-content:center;padding:0 54px 0 4px}
+  .kandoVisual{transform:none;align-self:center}
+  .currentNoteBadge{top:50%;transform:translateY(-50%)}
+
+  .fullScoreViewport{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;touch-action:pan-x;overscroll-behavior-inline:contain}
+  .fullScoreViewport::-webkit-scrollbar{display:none}
+  .fullScoreViewport .playerPaper{min-width:max-content;padding:42px 14px 22px}
+  .fullScoreViewport .paperBody{gap:12px}
+  .score{gap:8px}
+  .scoreCol{grid-template-columns:42px 18px;min-height:362px}
+  .noteCells{grid-template-rows:repeat(12,30px)}
+  .noteRow{height:30px}
+  .noteRow>.noteGlyph{font-size:1.18rem}
+  .halfCell{top:21px;width:18px;height:18px;background:transparent}
+  .halfCell .noteGlyph{font-size:.74rem}
+  .columnNumber{left:21px;font-size:.78rem}
+  .lyricLane{width:18px;font-size:.7rem}
+}
+
 /* v11: 工工四はDOMを逆順に並べ、通常の横スクロールで右端の1列目から追従。 */
 .score{flex-direction:row}
 
