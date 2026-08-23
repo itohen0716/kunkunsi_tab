@@ -54,40 +54,38 @@
   width: 100%;
   max-width: 1200px;
   height: auto;
-  aspect-ratio: 1140 / 558;
-  margin: -28px auto 0;
+  aspect-ratio: 1140 / 500;
+  margin: -88px auto 0;
   padding: 0;
   transform: none;
   overflow: hidden;
 }
 
-#kandoPanel .kandoVisual #kandoImage {
+#kandoPanel .kandoSvg {
   position: relative;
   z-index: 0;
   display: block;
   width: 100%;
   max-width: none;
   height: auto;
-  object-fit: contain;
+  overflow: visible;
 }
 
 /* 「開放弦」を覆う。 */
-#kandoPanel .kandoVisual::after {
-  left: 39.2%;
-  top: 0;
-  width: 6.8%;
-  height: 38%;
-  background: #fffaf2;
-}
+#kandoPanel .kandoVisual::after { display: none; }
 
 /* 青い寸法線と距離表示を覆い、左側の下向き糸巻きは残す。 */
-#kandoPanel .kandoVisual::before {
-  left: 27.3%;
-  right: 0;
-  top: 72%;
-  bottom: 0;
-  background: #fffaf2;
-}
+#kandoPanel .kandoVisual::before { display: none; }
+
+.kandoSvg .sanshinBody { fill: #050505; }
+.kandoSvg .strings line { stroke: #d8dce0; stroke-width: 4; }
+.kandoSvg .stringLabels { fill: #f2a9b0; font: 700 35px "Yu Mincho", "Hiragino Mincho ProN", serif; }
+.kandoSvg .kandoMarker circle { fill: #e42420; stroke: #a60f0d; stroke-width: 3; transition: opacity .16s ease, stroke .16s ease, stroke-width .16s ease; }
+.kandoSvg .kandoMarker text { fill: #fff; font: 700 37px "Yu Mincho", "Hiragino Mincho ProN", serif; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+.kandoSvg .kandoMarker text.small { font-size: 22px; }
+.kandoSvg.hasActive .kandoMarker:not(.active) { opacity: .22; }
+.kandoSvg .kandoMarker.active circle { stroke: #ffd45d; stroke-width: 9; }
+.kandoSvg .kandoMarker.active { opacity: 1; }
 
 #kandoPanel .legacyCharacter {
   right: 5px;
@@ -103,7 +101,7 @@
   #kandoPanel .kandoVisual {
     width: 100%;
     max-width: none;
-    margin-top: -12px;
+    margin-top: -46px;
   }
   #kandoPanel .legacyCharacter {
     right: 2px;
@@ -115,7 +113,7 @@
 @media (max-width: 520px) {
   #kandoPanel { padding: 5px 1px 2px; }
   #noteWindow { gap: 3px; }
-  #kandoPanel .kandoVisual { margin-top: -8px; }
+  #kandoPanel .kandoVisual { margin-top: -42px; }
   #kandoPanel .legacyCharacter {
     right: 1px;
     bottom: 2px;
