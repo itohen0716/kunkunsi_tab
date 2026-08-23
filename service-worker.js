@@ -1,5 +1,5 @@
 "use strict";
-const CACHE="kunkunshi-player-v24-svg";
+const CACHE="kunkunshi-player-v27-svg";
 const ASSETS=[
   "./","index.html","styles.css","player.css","player-layout-v3.css","practice-stage-v22.css","sample-score.js","legacy-songs.js","player.js","manifest.webmanifest","icon.svg",
   "assets/fonts/ShipporiMincho-SemiBold-Kunkunshi.ttf","assets/fonts/ShipporiMincho-LICENSE.txt",
