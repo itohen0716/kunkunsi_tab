@@ -215,6 +215,29 @@
   .legacyCharacter{right:3px;bottom:3px;width:42px}
 }
 
+/* v20: 見本位置へ音窓を重ね、三線をカード幅まで拡大。青線は完全に覆う。 */
+.practiceStage{height:590px}
+.kandoPanel{height:590px;position:relative;display:block;padding:0 6px;overflow:hidden}
+.noteWindow{position:absolute;z-index:4;top:10px;left:50%;width:max-content;transform:translateX(-50%);margin:0}
+.kandoVisual{position:absolute;left:50%;top:76px;width:calc(100% - 12px);max-width:1180px;aspect-ratio:1140/558;transform:translateX(-50%);margin:0}
+.kandoVisual::before{left:27.3%;right:0;top:72%;bottom:0;background:#fffaf2}
+.legacyCharacter{right:4px;bottom:5px;width:68px}
+
+@media(max-width:800px){
+  .practiceStage,.kandoPanel{height:370px}
+  .kandoPanel{padding-inline:2px}
+  .noteWindow{top:8px}
+  .kandoVisual{top:82px;width:calc(100% - 4px);max-width:none}
+  .legacyCharacter{right:2px;bottom:3px;width:52px}
+}
+
+@media(max-width:520px){
+  .practiceStage,.kandoPanel{height:280px}
+  .noteWindow{top:6px}
+  .kandoVisual{top:72px;width:calc(100% - 2px)}
+  .legacyCharacter{right:1px;bottom:2px;width:44px}
+}
+
 /* v12: スマホ最終調整。1列レーン、4列譜面、手動・自動スクロールを両立。 */
 .halfCell,.halfCell.playing{background:transparent}
 .fullScoreViewport .playerPaper{justify-content:flex-start}
