@@ -167,6 +167,29 @@
   .laneNote.playing{width:38px;height:38px}
 }
 
+/* v17: PCは音窓を右固定、スマホは現在音を三線の上中央へ。 */
+@media(min-width:801px){
+  .kandoPanel{justify-content:flex-start;gap:14px}
+  .kandoVisual{flex:1 1 auto;width:auto;max-width:690px;min-width:0}
+  .noteWindow{flex:0 0 auto;margin-left:auto;justify-content:flex-end}
+}
+@media(max-width:800px){
+  .practiceStage,.kandoPanel{height:250px}
+  .kandoPanel{flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:6px 8px}
+  .noteWindow{position:static;right:auto;top:auto;order:-1;transform:none;width:100%;justify-content:center}
+  .flowNoteCard.current{width:58px;height:76px;padding:5px 3px}
+  .flowNoteCard.current span{font-size:.62rem}
+  .flowNoteCard.current strong{font-size:1.45rem}
+  .flowNoteCard.current.halfBeat strong{font-size:1.08rem}
+  .flowNoteCard small{bottom:3px}
+  .kandoVisual{flex:0 1 auto;width:min(100%,570px);max-width:570px}
+}
+@media(max-width:520px){
+  .practiceStage,.kandoPanel{height:246px}
+  .kandoPanel{padding:4px 6px}
+  .kandoVisual{width:100%;max-width:none}
+}
+
 /* v12: スマホ最終調整。1列レーン、4列譜面、手動・自動スクロールを両立。 */
 .halfCell,.halfCell.playing{background:transparent}
 .fullScoreViewport .playerPaper{justify-content:flex-start}
@@ -209,4 +232,40 @@
   .laneNote.playing{width:27px;height:27px;box-shadow:0 0 0 3px #f8d96c77}
   .halfCell{top:20px;width:16px;height:16px;font-size:.68rem}
   .halfCell .noteGlyph{font-size:.68rem}
+}
+
+/* v18: 音窓はPC・スマホとも過去1／現在／次3の5枚を固定表示。 */
+@media(min-width:801px){
+  .kandoPanel{padding-inline:24px;gap:12px}
+  .kandoVisual{flex:1 1 auto;width:auto;max-width:720px}
+  .noteWindow{flex:0 0 auto;margin-left:auto;gap:9px}
+}
+
+@media(max-width:800px){
+  .practiceStage,.kandoPanel{height:270px}
+  .kandoPanel{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:8px 6px;overflow:hidden}
+  .noteWindow{position:static;order:-1;display:flex;width:100%;margin:0;gap:4px;align-items:center;justify-content:center;transform:none}
+  .flowNoteCard,.flowNoteCard:not(.current){display:grid;width:48px;height:62px;padding:4px 2px;border-radius:7px}
+  .flowNoteCard span{font-size:.52rem}
+  .flowNoteCard strong{font-size:1.15rem}
+  .flowNoteCard.current{width:58px;height:72px;padding:4px 2px}
+  .flowNoteCard.current span{font-size:.56rem}
+  .flowNoteCard.current strong{font-size:1.42rem}
+  .flowNoteCard.halfBeat strong{font-size:.88rem}
+  .flowNoteCard.current.halfBeat strong{font-size:1.02rem}
+  .flowNoteCard small{bottom:2px;padding:0 3px;font-size:.48rem}
+  .kandoVisual{flex:0 1 auto;width:min(100%,570px);max-width:570px;transform:none;align-self:center}
+}
+
+@media(max-width:520px){
+  .practiceStage,.kandoPanel{height:250px}
+  .kandoPanel{padding:6px 2px}
+  .noteWindow{gap:3px}
+  .flowNoteCard,.flowNoteCard:not(.current){width:45px;height:58px;padding:3px 1px}
+  .flowNoteCard.current{width:55px;height:68px}
+  .flowNoteCard span{font-size:.48rem}
+  .flowNoteCard.current span{font-size:.52rem}
+  .flowNoteCard strong{font-size:1.08rem}
+  .flowNoteCard.current strong{font-size:1.34rem}
+  .kandoVisual{width:100%;max-width:none}
 }
