@@ -112,6 +112,24 @@
   .kandoVisual{width:100%;max-width:none;aspect-ratio:1140/532}
 }
 
+/* v14: PCでは譜面を約1.7倍へ拡大し、横スクロールで全列を表示。 */
+@media(min-width:801px){
+  .fullScoreViewport{overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;touch-action:pan-x;overscroll-behavior-inline:contain}
+  .fullScoreViewport .playerPaper{min-width:max-content;padding:54px 28px 30px}
+  .fullScoreViewport .paperBody{gap:20px}
+  .score{gap:10px}
+  .scoreCol{grid-template-columns:62px 24px;min-height:482px}
+  .noteCells{grid-template-rows:repeat(12,40px)}
+  .noteRow{height:40px}
+  .noteRow>.noteGlyph{font-size:1.5rem}
+  .halfCell{top:29px;width:22px;height:22px}
+  .halfCell .noteGlyph{font-size:.92rem}
+  .columnNumber{top:-36px;left:31px;min-width:38px;font-size:.84rem}
+  .lyricLane{width:24px;font-size:.82rem}
+  .paperTitle b{font-size:1.55rem}
+  .paperTitle span{font-size:.84rem}
+}
+
 /* v12: スマホ最終調整。1列レーン、4列譜面、手動・自動スクロールを両立。 */
 .halfCell,.halfCell.playing{background:transparent}
 .fullScoreViewport .playerPaper{justify-content:flex-start}
