@@ -1,0 +1,55 @@
+/* v28: 画面用の拍寸法。印刷寸法には適用しない。 */
+@media screen {
+  :root {
+    --score-beat-height: 54px;
+    --score-bottom-gap: 5px;
+    --score-half-size: 24px;
+  }
+
+  .fullScoreViewport .scoreCol {
+    min-height: 0;
+  }
+
+  .fullScoreViewport .noteCells {
+    grid-template-rows: repeat(12, var(--score-beat-height));
+    height: auto;
+    padding-bottom: var(--score-bottom-gap);
+  }
+
+  .fullScoreViewport .noteRow {
+    height: var(--score-beat-height);
+  }
+
+  /* 半拍は1拍升目の中央ではなく、現在拍と次拍の境界中央へ置く。 */
+  .fullScoreViewport .halfCell {
+    top: calc(var(--score-beat-height) - (var(--score-half-size) / 2));
+    width: var(--score-half-size);
+    height: var(--score-half-size);
+    background: transparent;
+  }
+
+  /* 再生位置線もJavaScriptが設定する共通拍高を参照する。 */
+  .fullScoreViewport .scoreCol.playingColumn::after {
+    content: "";
+    position: absolute;
+    z-index: 4;
+    left: 0;
+    right: 17px;
+    top: var(--playback-y, 0px);
+    height: 2px;
+    translate: 0 -1px;
+    background: #c28a2e;
+    pointer-events: none;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  :root {
+    --score-beat-height: 50px;
+    --score-half-size: 18px;
+  }
+
+  .fullScoreViewport .scoreCol.playingColumn::after {
+    right: 16px;
+  }
+}
