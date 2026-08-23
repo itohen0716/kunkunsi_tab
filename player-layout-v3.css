@@ -130,6 +130,43 @@
   .paperTitle span{font-size:.84rem}
 }
 
+/* v15: 1拍を正方形化。6枚の音窓と1列単位の勘所レーン。 */
+.laneColumn{flex-basis:100%}
+.laneViewport{scroll-behavior:smooth}
+.laneNote{width:38px;height:38px;font-size:1rem}
+.laneNote.half{width:29px;height:29px;font-size:.78rem}
+.laneNote.playing{width:46px;height:46px}
+.kandoPanel{display:flex;align-items:center;justify-content:center;gap:18px}
+.noteWindow{display:flex;align-items:center;justify-content:center;gap:10px;min-width:0}
+.flowNoteCard{position:relative;display:grid;place-items:center;align-content:center;width:62px;height:104px;padding:8px 4px;border-radius:8px;background:#302a22;color:#fff;box-shadow:0 2px 5px #302a2222;text-align:center}
+.flowNoteCard span{font-size:.68rem;white-space:nowrap}.flowNoteCard strong{font-family:"Yu Mincho",serif;font-size:1.65rem;color:#ffd66c;line-height:1.1}
+.flowNoteCard.current{width:78px;height:132px;box-shadow:0 0 0 3px #c59b53,0 4px 10px #302a2233}.flowNoteCard.current strong{font-size:2.25rem}
+.flowNoteCard.past{background:#77716a;color:#eee}.flowNoteCard.past strong{color:#e7e1d8}
+.flowNoteCard.halfBeat strong{font-size:1.18rem}.flowNoteCard.current.halfBeat strong{font-size:1.55rem}
+.flowNoteCard small{position:absolute;bottom:7px;padding:1px 5px;border-radius:999px;background:#fff4d0;color:#69501f;font-size:.58rem;font-weight:700}
+@media(min-width:801px){
+  .scoreCol{grid-template-columns:62px 24px;min-height:746px}
+  .noteCells{grid-template-rows:repeat(12,62px)}
+  .noteRow{height:62px}
+  .noteRow>.noteGlyph{font-size:1.75rem}
+  .halfCell{top:50px;width:24px;height:24px}
+  .halfCell .noteGlyph{font-size:1rem}
+  .kandoVisual{flex:1 1 52%;max-width:570px}
+  .noteWindow{flex:1 1 48%}
+}
+@media(max-width:800px){
+  .noteWindow{position:absolute;right:4px;top:50%;transform:translateY(-50%)}
+  .flowNoteCard:not(.current){display:none}
+  .flowNoteCard.current{width:56px;height:96px}
+  .flowNoteCard.current strong{font-size:1.55rem}
+  .flowNoteCard.current.halfBeat strong{font-size:1.15rem}
+}
+@media(max-width:520px){
+  .laneNote{width:32px;height:32px;font-size:.85rem}
+  .laneNote.half{width:24px;height:24px;font-size:.66rem}
+  .laneNote.playing{width:38px;height:38px}
+}
+
 /* v12: スマホ最終調整。1列レーン、4列譜面、手動・自動スクロールを両立。 */
 .halfCell,.halfCell.playing{background:transparent}
 .fullScoreViewport .playerPaper{justify-content:flex-start}
