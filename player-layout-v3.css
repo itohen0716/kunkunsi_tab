@@ -190,6 +190,31 @@
   .kandoVisual{width:100%;max-width:none}
 }
 
+/* v19: 添付見本どおり、音窓を三線の上へ固定し三線全体を表示。 */
+.practiceStage{height:620px}
+.kandoPanel{box-sizing:border-box;height:620px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:12px 18px;overflow:hidden}
+.noteWindow{position:static;order:-1;flex:0 0 auto;width:100%;margin:0;transform:none;justify-content:center}
+.flowNoteCard.current{box-shadow:0 0 0 3px #c9473f,0 4px 10px #302a2233}
+.kandoVisual{position:relative;flex:0 0 auto;width:min(100%,900px);max-width:900px;aspect-ratio:1140/558;overflow:hidden;transform:none;align-self:center}
+.kandoVisual #kandoImage{display:block;width:100%;height:100%;object-fit:contain}
+.kandoVisual::after{top:0;height:38%}
+.kandoVisual::before{top:76%;bottom:0}
+.legacyCharacter{right:8px;bottom:8px;width:62px;height:auto}
+
+@media(max-width:800px){
+  .practiceStage,.kandoPanel{height:420px}
+  .kandoPanel{gap:8px;padding:8px 6px}
+  .kandoVisual{width:min(100%,650px);max-width:650px;aspect-ratio:1140/558}
+  .legacyCharacter{right:5px;bottom:5px;width:50px}
+}
+
+@media(max-width:520px){
+  .practiceStage,.kandoPanel{height:294px}
+  .kandoPanel{gap:6px;padding:6px 2px}
+  .kandoVisual{width:100%;max-width:none;aspect-ratio:1140/558}
+  .legacyCharacter{right:3px;bottom:3px;width:42px}
+}
+
 /* v12: スマホ最終調整。1列レーン、4列譜面、手動・自動スクロールを両立。 */
 .halfCell,.halfCell.playing{background:transparent}
 .fullScoreViewport .playerPaper{justify-content:flex-start}
