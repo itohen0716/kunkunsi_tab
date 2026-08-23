@@ -103,6 +103,15 @@
   .playerPaper{min-width:max-content;padding:40px 16px 20px}
 }
 
+/* v13: 下向きの糸巻きまで表示。元画像は変更せず、不要表示だけを覆う。 */
+.kandoVisual{width:min(100%,570px);max-width:570px;aspect-ratio:1140/532}
+.kandoVisual::after{height:38%}
+.kandoVisual::before{content:"";position:absolute;left:27.3%;right:0;top:76%;bottom:0;background:#fffaf2;z-index:1;pointer-events:none}
+
+@media(max-width:520px){
+  .kandoVisual{width:100%;max-width:none;aspect-ratio:1140/532}
+}
+
 /* v12: スマホ最終調整。1列レーン、4列譜面、手動・自動スクロールを両立。 */
 .halfCell,.halfCell.playing{background:transparent}
 .fullScoreViewport .playerPaper{justify-content:flex-start}
